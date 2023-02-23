@@ -1,0 +1,41 @@
+:root {
+    --secondary: #000;
+    --primary: #12966a;
+    --background-color: #1d1f20;
+    --text-color: white;
+}
+
+html * {
+    margin:0;
+    padding:0; 
+}
+
+body {
+    background-color: var(--background-color);
+    color: #0bac76;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.menu a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu a:visited {
+    color: inherit;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.main {
+    box-shadow: inset 5px 5px 15px #141414;
+    height: 200px;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
