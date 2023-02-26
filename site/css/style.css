@@ -10,6 +10,11 @@
     src: url("../fonts/Autery.ttf");
 }
 
+@font-face {
+    font-family: "Ambarella";
+    src: url("../fonts/Ambarella.ttf");
+}
+
 html * {
     margin:0;
     padding:0;
@@ -17,12 +22,13 @@ html * {
 
 body {
     background: rgb(230,134,175);
-    background: linear-gradient(29deg, rgba(230,134,175,1) 0%, rgba(148,187,233,1) 100%);
+    background: linear-gradient(29deg, rgba(230,134,175,1) 0%, rgb(153, 195, 243) 100%) no-repeat;
     color: #1a1919;
     display: flex;
     padding: 10px 20px;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
+    align-items: center;
 }
 
 .menu {
@@ -43,12 +49,13 @@ header{
 }
 
 footer {
-    position: absolute;
+    margin-top: 40px;
+    position: relative;
     bottom: 0;
 }
 
 h1 {
-    font-family: 'Autery';
+    font-family: 'Ambarella';
    
 }
 
@@ -58,20 +65,46 @@ h1 {
 }
 
 .card {
-    box-shadow: -2px 2px 10px #5a143f5d;
-    height: 160px;
+    box-shadow: -2px 2px 10px #5a143f5d, 
+    inset 10px -10px 20px rgba(82, 6, 63, 0.11),
+    inset -10px 10px 24px rgba(255, 255, 255, 0.11) ;
     border-radius: 5px;
-    padding: 12px 15px;
-    position: relative;
-    margin: 0 10px;
     display: inline-block;
-    width: 120px;
+    height: 160px;
+    max-width: 140px;
+    margin: 0 10px;
+    padding: 15px;
+    transition: all 100ms;
 }
 
 .card:hover {
     box-shadow: -2px 5px 15px #5a143f5d;
-    transition: 100ms;
     transform: scale(1.1);
+}
+
+.card-title {
+    text-overflow: ellipsis;
+    font-family: 'Helvetica';
+    font-weight: 400;
+    margin-top: 5px;
+    overflow: hidden;
+    color: #6c217a;
+    text-align: center;
+    text-shadow: 1px 1px 1px #0000002f;
+    word-wrap: break-word;
+}
+
+.card-image {
+    object-fit: cover;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cards {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-auto-rows: 210px;
 }
 
 .big-card {
@@ -83,6 +116,8 @@ h1 {
 }
 
 .section-title {
+    margin-left: 10px;
+    margin-right: 10px;
     margin-top: 30px;
     margin-bottom: 20px;
 }
