@@ -1,17 +1,13 @@
 const curses = [
     {
-        name: 'Postiça realistas 2.0',
+        name: 'Postiça realista 2.0',
         url: 'https://go.hotmart.com/Q80089834O?dp=1',
         image: 'https://static-media.hotmart.com/cLengJPDbKyAO_caHeKsREdbnf8=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/6b51a57d-6b27-46bd-88c8-6eb00d07f1f5/Capa.jpg?w=920'
     },
     {
-        name: 'Como ser uma Irmã melhor',
-        url: ' ',
-        image: 'https://img.freepik.com/fotos-gratis/retrato-de-irmao-e-irma-abracando-e-sorrindo_176420-15678.jpg?w=740&t=st=1677378555~exp=1677379155~hmac=cd1879c56fc28a4c131569f938d03f0687c5d8672c4aa40d16e7f7b43c10a31d'
-    }, 
-    {
-        name: 'como vencer a calvicie',
-        image: 'https://images7.memedroid.com/images/UPLOADED899/588e905ba5f58.jpeg'
+        name: 'Excelência em Unhas',
+        url: 'https://go.hotmart.com/R80141857U?dp=1',
+        image: 'https://static-media.hotmart.com/LiHw61CY-_BpEcgnQe83sxHRscI=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/450acb2e-50ed-4508-8c3a-c0adc1b45a87/001.jpg?w=920'
     }
 ]
 
@@ -43,29 +39,37 @@ function init() {
     let materialCards = document.getElementById("material-cards")
     
     buildCards(curseCards, curses)
-    buildCards(materialCards, materials)
+    buildCards(materialCards, null)
 }
 
 function buildCards(container, data) {
+    if (!data) {
+        container.className = 'coming-soon-parent'
+        container.innerHTML = "<h2 class='coming-soon'>Em breve...</h2>"
+        return
+    }
+
     for (let i in data) {
         let item = data[i]
         let card = document.createElement('div')
         let title = document.createElement('h4')
         let image = document.createElement('img')
+        let descriptionDiv = document.createElement("div")
 
         card.className = 'card'
         card.onclick = function() {
             window.location.assign(item.url)
         }
-
         image.src = item.image
         image.className = 'card-image'
-    
+       
         title.innerHTML = item.name
         title.className = 'card-title'
-        
+
+        descriptionDiv.className = "card-description-parent"
+        descriptionDiv.append(title)
         card.append(image)
-        card.append(title)
+        card.append(descriptionDiv)
         container.append(card)
     }
 }
