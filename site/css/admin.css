@@ -1,0 +1,46 @@
+html {
+    background-color: rgb(167, 167, 167);
+    
+}
+body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    top: 20%;
+    background-color: rgb(180, 180, 180);
+    box-shadow: -1px 1px 3px #00000038;
+    border-radius: 10px;
+    border: 0.1px solid #ffffff23;
+    display: list-item;
+    overflow: hidden;
+    padding: 20px;
+    width: 250px;
+    position: absolute;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0.060);
+    border: 0.5px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
+    padding: 0 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-weight: 600;
+    height: 30px;
+    margin: 10px 0;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.582);
+}
+
+input::placeholder {
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.233);
+}
+
+input[type='button'] {
+    color: aliceblue;
+    background-color: rgb(5, 151, 151);
+}

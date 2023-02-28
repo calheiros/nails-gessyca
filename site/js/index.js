@@ -11,7 +11,7 @@ const curses = [
     }
 ]
 
-const materials = [
+const products = [
     {
         name: 'Top coat',
         url: ' ',
@@ -28,18 +28,18 @@ const materials = [
         image: 'https://img.elo7.com.br/product/main/1504922/vassoura-de-bruxa-bruxa.jpg'
     },
     {
-        name: 'Oleo de Peroba',
+        name: 'Óleo de Peroba',
         url: ' ',
         image: 'https://images.tcdn.com.br/img/img_prod/791033/oleo_de_peroba_king_tradicional_100ml_4813_1_c2f1686a6627345f267da3465cfb34df.jpg'
     }
 ]
 
-function init() {
-    let curseCards = document.getElementById("curse-cards")
-    let materialCards = document.getElementById("material-cards")
+window.onload = function() {
+    let gridCurses = document.getElementById("grid-curses")
+    let gridProducts = document.getElementById("grid-products")
     
-    buildCards(curseCards, curses)
-    buildCards(materialCards, null)
+    buildCards(gridCurses, curses)
+    buildCards(gridProducts, null)
 }
 
 function buildCards(container, data) {
@@ -73,5 +73,3 @@ function buildCards(container, data) {
         container.append(card)
     }
 }
-
-init()
