@@ -54,7 +54,7 @@ function buildCards(container, data) {
         let card = document.createElement('div')
         let title = document.createElement('h4')
         let image = document.createElement('img')
-        let descriptionDiv = document.createElement("div")
+        let infoContainer = document.createElement("div")
 
         card.className = 'card'
         card.onclick = function() {
@@ -66,10 +66,10 @@ function buildCards(container, data) {
         title.innerHTML = item.name
         title.className = 'card-title'
 
-        descriptionDiv.className = "card-description-parent"
-        descriptionDiv.append(title)
+        infoContainer.className = "card-description-parent"
+        infoContainer.append(title)
         card.append(image)
-        card.append(descriptionDiv)
+        card.append(infoContainer)
         container.append(card)
     }
 }

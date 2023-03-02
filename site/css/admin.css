@@ -43,4 +43,10 @@ input::placeholder {
 input[type='button'] {
     color: aliceblue;
     background-color: rgb(5, 151, 151);
+    transition: box-shadow 0.3s;
+}
+
+input[type='button']:hover {
+    transition: 300ms all;
+    box-shadow: 0 10px 20px #1b7f9e;
 }
