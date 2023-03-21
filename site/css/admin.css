@@ -43,10 +43,15 @@ input::placeholder {
 input[type='button'] {
     color: aliceblue;
     background-color: rgb(5, 151, 151);
-    transition: box-shadow 0.3s;
+    transition: background-color 500ms;
 }
 
 input[type='button']:hover {
-    transition: 300ms all;
-    box-shadow: 0 10px 20px #1b7f9e;
+    background-color: rgb(31, 209, 171);
+    box-shadow: 0 6px 12px rgb(24, 158, 129);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgb(3, 137, 146);
 }

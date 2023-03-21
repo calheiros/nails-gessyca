@@ -12,28 +12,30 @@
 
 <body>
     <header>
-        <img class="rounded-img" style="display: none;">
+        <img class="rounded-img" style="display: none">
         <div class="menu">
             <a href="pages/home.html" id="home">HOME</a>
-            <a href="pages/preferences.htmml">CONFIG</a>
+            <a href="pages/preferences.html">CONFIG</a>
         </div>
-        <h1 class="large-text">Gessyca Nails</h1>
+        <h1 class="header-title">Gessyca Nails</h1>
     </header>
-
+    
+    <h2 id="loading">Carregando...</h2>
+    
     <article>
-        <h3 class="large-text section-title">
-            Cursos recomendados
-        </h3>
-        <div id="grid-curses" class="cards-grid"></div>
-
-        <h3 class="large-text section-title">Produtos que uso</h3>
-        <div id="grid-products" class="cards-grid" ></div>
+        <div class="section-container">
+            <h3 class="section-title">Cursos recomendados</h3>
+            <grid-card id="grid-curses" class="cards-grid"></grid-card>
+       
+            <h3 class="large-text section-title">Produtos que uso</h3>
+            <grid-card id="grid-products" class="cards-grid"></grid-card>
+        </div>
     </article>
 
     <noscript>
-        <h2 style="color: brown;">Navegador não suportado!</h2>
+        <h2 style="color: brown">Navegador não suportado!</h2>
     </noscript>
-    
+
     <footer>
         <small> Feito por <a href="https://github.com/calheiros">Jefferson Calheiros</a> ©2023 </small>
     </footer>

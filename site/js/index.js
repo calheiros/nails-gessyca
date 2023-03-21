@@ -1,5 +1,6 @@
 const curses = [
     {
+        hot: true,
         name: 'Postiça realista 2.0',
         url: 'https://go.hotmart.com/Q80089834O?dp=1',
         image: 'https://static-media.hotmart.com/cLengJPDbKyAO_caHeKsREdbnf8=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/6b51a57d-6b27-46bd-88c8-6eb00d07f1f5/Capa.jpg?w=920'
@@ -37,39 +38,46 @@ const products = [
 window.onload = function() {
     let gridCurses = document.getElementById("grid-curses")
     let gridProducts = document.getElementById("grid-products")
+    let loading = document.getElementById("loading")
+    let content = document.getElementsByTagName('article')
+
+    buildGrid(gridCurses, curses)
+    buildGrid(gridProducts, null)
+    loading.style.opacity = 0
     
-    buildCards(gridCurses, curses)
-    buildCards(gridProducts, null)
+    content[0].style.opacity = 1
 }
 
-function buildCards(container, data) {
-    if (!data) {
+function buildGrid(container, data) {
+    if (data === null) {
         container.className = 'coming-soon-parent'
         container.innerHTML = "<h2 class='coming-soon'>Em breve...</h2>"
         return
     }
-
+    
     for (let i in data) {
         let item = data[i]
-        let card = document.createElement('div')
-        let title = document.createElement('h4')
+        let card = document.createElement('card')
+        let title = document.createElement('title')
         let image = document.createElement('img')
-        let infoContainer = document.createElement("div")
+        let info = document.createElement("info-child")
 
-        card.className = 'card'
         card.onclick = function() {
             window.location.assign(item.url)
         }
-        image.src = item.image
-        image.className = 'card-image'
-       
-        title.innerHTML = item.name
-        title.className = 'card-title'
 
-        infoContainer.className = "card-description-parent"
-        infoContainer.append(title)
+        image.src = item.image
+        title.innerHTML = item.name
+
+        info.append(title)
         card.append(image)
-        card.append(infoContainer)
+        card.append(info)
+
+        if(item.hot === true) {
+            let hotTag = document.createElement("tag")
+            hotTag.innerHTML = "HOT"
+            card.append(hotTag)
+        }
         container.append(card)
     }
 }
