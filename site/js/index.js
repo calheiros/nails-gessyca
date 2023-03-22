@@ -39,12 +39,13 @@ window.onload = function() {
     let gridCurses = document.getElementById("grid-curses")
     let gridProducts = document.getElementById("grid-products")
     let loading = document.getElementById("loading")
-    let content = document.getElementsByTagName('article')
+    let content = document.getElementsByClassName("content")
+    loading.style.opacity = 1
 
     buildGrid(gridCurses, curses)
     buildGrid(gridProducts, null)
-    loading.style.opacity = 0
     
+    loading.style.opacity = 0
     content[0].style.opacity = 1
 }
 

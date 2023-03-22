@@ -22,12 +22,19 @@ html * {
 
 body {
     background: var(--background-color);
-    color: #1a1919;
+}
+
+body, .content {
     display: flex;
-    padding: 10px 20px;
     min-height: 100vh;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
+}
+
+.content {
+    width: 100%;
+    opacity: 0;
+    animation: show 500ms ease-in 1;
 }
 
 .menu {
@@ -44,11 +51,19 @@ body {
 }
 
 header {
-    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(138, 38, 116, 0.274);
+    background: -webkit-linear-gradient(
+        0deg, rgba(177, 5, 163, 0.171) 60% , hsla(19, 100%, 50%, 0.199) 100%);
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    position: sticky;
+    z-index: 999;
 }
 
 footer {
-    margin-top: 40px;
+
     position: absolute;
     bottom: 0;
 }
@@ -57,30 +72,32 @@ h1 {
     font-family: 'Ambarella';
 
 }
+
 article {
-    opacity: 0;
+    padding-top: 30px;
 }
 
 #loading {
-    opacity: 0;
+    color: var(--text-color);
     position: absolute;
     margin-top: 50%;
 }
 
 .header-title {
-    padding: 0 14px;
-    background: -webkit-linear-gradient(30deg, rgb(128, 6, 117) 50%, rgb(194, 176, 14)100%);
+    color: var(--text-color);
+    padding: 5px 14px;
     font-weight: 900;
-    font-size: 43px;
+    font-size: 34px;
     background-clip: text;
+    background: -webkit-linear-gradient(0deg, rgb(128, 6, 117) 40%, rgb(236, 219, 63)100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 card {
-    background-color: rgba(182, 82, 207, 0.075);
+    background-color: rgba(182, 82, 207, 0.103);
     border-radius: 8px;
-    box-shadow: #9740705b -1px 1px 5px;
+    box-shadow: #9740705b -1px 1px 3px;
     display: flex;
     max-width: 160px;
     min-width: 130px;
@@ -99,7 +116,6 @@ card title {
     color: var(--text-color);
     font-family: 'Helvetica';
     font-size: 16px;
-    font-weight: 500;
     text-align: center;
     text-overflow: ellipsis;
     display: block;
@@ -124,7 +140,6 @@ card tag {
     background-color: red;
     text-align: center;
     top: 0;
-    z-index: 999;
 }
 
 card info-child {
@@ -154,15 +169,16 @@ grid-card {
 .section-container {
     padding: 2px 12px;
     margin-bottom: 15px;
-    animation: show 500ms ease-in 1;
 }
 
 .section-title {
     color: var(--text-color);
+    padding: 4px;
+    border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
-    margin: 24px 10px 15px 10px;
+    margin: 28px 10px 15px 10px;
     overflow: hidden;
 }
 
@@ -198,6 +214,4 @@ grid-card {
     50% {
         scale: 1.1;
     }
-
-    ;
 }

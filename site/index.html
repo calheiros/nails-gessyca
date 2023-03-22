@@ -11,35 +11,45 @@
 </head>
 
 <body>
+    <div class="content">
     <header>
         <img class="rounded-img" style="display: none">
         <div class="menu">
             <a href="pages/home.html" id="home">HOME</a>
             <a href="pages/preferences.html">CONFIG</a>
         </div>
-        <h1 class="header-title">Gessyca Nails</h1>
+        <h1 class="header-title"><d style="color: 'green'">Gessyca</d> <d>Nails</d></h1>
     </header>
-    
-    <h2 id="loading">Carregando...</h2>
     
     <article>
         <div class="section-container">
-            <h3 class="section-title">Cursos recomendados</h3>
+            <h3 class="section-title">
+                Cursos recomendados
+                <div class="section-divider"></div>
+            </h3>
+            
             <grid-card id="grid-curses" class="cards-grid"></grid-card>
        
-            <h3 class="large-text section-title">Produtos que uso</h3>
+            <h3 class="large-text section-title">
+                Produtos que uso
+                <div class="section-divider"></div>
+            </h3>
+            
             <grid-card id="grid-products" class="cards-grid"></grid-card>
         </div>
     </article>
 
-    <noscript>
-        <h2 style="color: brown">Navegador não suportado!</h2>
-    </noscript>
-
+    
     <footer>
         <small> Feito por <a href="https://github.com/calheiros">Jefferson Calheiros</a> ©2023 </small>
     </footer>
+    </div>
 
+    <noscript>
+        <h2 style="color: brown">Navegador não suportado!</h2>
+    </noscript>
+    
+    <h2 id="loading">Carregando...</h2>
 </body>
 
 </html>
