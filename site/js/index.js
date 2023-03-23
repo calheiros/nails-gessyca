@@ -1,11 +1,13 @@
 const curses = [
     {
         hot: true,
+        author: 'Raquel Aquino',
         name: 'Postiça realista 2.0',
         url: 'https://go.hotmart.com/Q80089834O?dp=1',
         image: 'https://static-media.hotmart.com/cLengJPDbKyAO_caHeKsREdbnf8=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/6b51a57d-6b27-46bd-88c8-6eb00d07f1f5/Capa.jpg?w=920'
     },
     {
+        author: 'MICHELLE APARECIDA',
         name: 'Excelência em Unhas',
         url: 'https://go.hotmart.com/R80141857U?dp=1',
         image: 'https://static-media.hotmart.com/LiHw61CY-_BpEcgnQe83sxHRscI=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/450acb2e-50ed-4508-8c3a-c0adc1b45a87/001.jpg?w=920'
@@ -38,15 +40,13 @@ const products = [
 window.onload = function() {
     let gridCurses = document.getElementById("grid-curses")
     let gridProducts = document.getElementById("grid-products")
-    let loading = document.getElementById("loading")
-    let content = document.getElementsByClassName("content")
+    let loading = document.getElementById("loading-container")
     loading.style.opacity = 1
 
     buildGrid(gridCurses, curses)
     buildGrid(gridProducts, null)
     
     loading.style.opacity = 0
-    content[0].style.opacity = 1
 }
 
 function buildGrid(container, data) {
@@ -62,13 +62,14 @@ function buildGrid(container, data) {
         let title = document.createElement('title')
         let image = document.createElement('img')
         let info = document.createElement("info-child")
-
+        let author = document.createElement("small")
         card.onclick = function() {
             window.location.assign(item.url)
         }
-
+       
         image.src = item.image
-        title.innerHTML = item.name
+        author.textContent = item.author
+        title.textContent = item.name
 
         info.append(title)
         card.append(image)
