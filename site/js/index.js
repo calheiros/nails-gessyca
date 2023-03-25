@@ -7,6 +7,11 @@ const curses = [
         image: 'https://static-media.hotmart.com/cLengJPDbKyAO_caHeKsREdbnf8=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/6b51a57d-6b27-46bd-88c8-6eb00d07f1f5/Capa.jpg?w=920'
     },
     {
+        name: 'Postiça Realista - Digital Nails',
+        image: 'https://static-media.hotmart.com/gUYWx2rFNmsmFs5GNp3nzRf-OTo=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/999ef713-d20a-4890-b031-03c604ad3162/DA4DDB69F0E744C882FD6D6AD697A911.png?w=920',
+        url: 'https://go.hotmart.com/T81121922W?dp=1'
+    },
+    {
         author: 'MICHELLE APARECIDA',
         name: 'Excelência em Unhas',
         url: 'https://go.hotmart.com/R80141857U?dp=1',
