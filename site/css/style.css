@@ -22,8 +22,21 @@ html * {
 
 body {
     background: var(--background-color);
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 body, #content {
     display: flex;
     min-height: 100vh;
@@ -111,13 +124,14 @@ article {
 card {
     display: flex;
     flex-direction: column;
-    background-color: #8e28a318;
-    box-shadow: -1px 1px 2px rgba(53, 2, 42, 0.178);
+    background-color: #fcfcfc18;
+    background-color: rgba(240, 255, 255, 0.301);
+    box-shadow: 0px 0px 3px rgba(53, 2, 42, 0.178);
     border-radius: 14px;
     max-width: 160px;
     min-width: 130px;
     margin: 8px;
-    padding: 6px;
+    padding: 8px;
     transition: all 100ms;
     position: relative;
 }
@@ -129,14 +143,16 @@ card:hover {
 
 card title {
     color: var(--text-color);
-    color: hsla(313, 100%, 19%, 0.801);
+    color: hsla(313, 65%, 35%, 0.801);
     display: block;
     font-family: 'Helvetica', monospace;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 500;
     text-align: center;
 }
 
 card img {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.233);
     border-radius: 10px;
     object-fit: cover;
     overflow: hidden;
@@ -145,7 +161,7 @@ card img {
 }
 
 card tag {
-    border-radius: 8px 0px;
+    border-radius: 10px 0px;
     position: absolute;
     color: white;
     font-size: 12px;
@@ -154,7 +170,7 @@ card tag {
     padding: 4px 10px;
     background-color: red;
     text-align: center;
-    top: 6px;
+    top: 8px;
 }
 
 card info-child {
@@ -162,7 +178,7 @@ card info-child {
     place-content: center;
     align-items: center;
     border-radius: 0 0 5px 5px;
-    height: 70px;
+    height: 75px;
 }
 
 grid-card {
@@ -185,7 +201,6 @@ grid-card {
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
-    font-weight: 600;
     margin: 20px 10px 5px 10px;
     overflow: hidden;
     z-index: 1;
