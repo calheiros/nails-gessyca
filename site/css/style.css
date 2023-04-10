@@ -182,6 +182,7 @@ card info-child {
 }
 
 grid-card {
+    margin: 0 8px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 170px;
